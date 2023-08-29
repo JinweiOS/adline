@@ -1,0 +1,16 @@
+.layout {
+  line-height: 26px;
+  width: 100%;
+}
+
+.layout:hover {
+  cursor: text;
+}
+
+.contentLine {
+
+}
+
+.content-line:hover {
+  cursor: text;
+}
