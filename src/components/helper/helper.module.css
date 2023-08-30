@@ -1,0 +1,14 @@
+.layout {
+  height: 24px;
+  width: 42px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid rgb(222, 224, 227);
+}
+
+.layout:hover {
+  background-color: rgb(239, 240, 241);
+  cursor: grab;
+}
