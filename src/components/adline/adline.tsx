@@ -1,29 +1,26 @@
 import { useEffect, useRef, useState } from 'react'
 import HelperBtn from '@/components/helper/helper'
-import MdRender from '@/components/mdrender/mdrender'
-import style from './adline.module.css'
+import style from './adline.module.scss'
 
 function AdLine() {
-  const [editable, setEdit] = useState(false)
-  const adlineDom = useRef(null)
-  const [inputText, setInputText] = useState('')
+  const [originCon, setOriginCon] = useState('')
 
-  function changeEditState(e) {
-    e.stopPropagation()
-    console.log(e)
-    setEdit(true)
+  function handleEdit() {
+    setState(true)
   }
 
-  function getInput(e) {
-    console.log(e.target.textContent)
-    setInputText(e.target.textContent)
+  function getInput(e: React.MouseEvent<HTMLDivElement>) {
+    const target = e.target as HTMLDivElement
+    setOriginCon(target.innerText)
   }
+
+  // 状态信息
+  const [state, setState] = useState(false)
+  const adlineDom = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (editable) {
-      adlineDom.current.focus()
-    }
-  }, [editable])
+    adlineDom.current!.focus()
+  }, [state])
 
   return (
     <div className={style.layout}>
@@ -32,14 +29,14 @@ function AdLine() {
           id="test"
           className={style.contentLine}
           suppressContentEditableWarning={true}
-          onClick={changeEditState}
-          onBlur={() => setEdit(false)}
+          onClick={handleEdit}
+          onBlur={() => setState(false)}
+          // onMouseEnter={() => changeState(State.hover)}
+          // onMouseLeave={() => changeState(State.preview)}
           onInput={getInput}
-          contentEditable={editable}
+          contentEditable={state}
           ref={adlineDom}
-        >
-          <MdRender text={inputText}></MdRender>
-        </div>
+        ></div>
       </div>
       <div className={style.helperLayout}>
         <HelperBtn></HelperBtn>

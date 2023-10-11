@@ -1,13 +1,15 @@
-import style from "./helper.module.css";
-import { FadArpchord, AkarIconsEdit } from "@/components/icon/icon";
+import style from './helper.module.css'
+import { FadArpchord, AkarIconsEdit } from '@/components/icon/icon'
 
 function Helper() {
   return (
-    <div className={style.layout}>
-      <AkarIconsEdit></AkarIconsEdit>
-      <FadArpchord></FadArpchord>
+    <div className={style.container}>
+      <div className={style.layout}>
+        <AkarIconsEdit></AkarIconsEdit>
+        <FadArpchord></FadArpchord>
+      </div>
     </div>
-  );
+  )
 }
 
-export default Helper;
+export default Helper

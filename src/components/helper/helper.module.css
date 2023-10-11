@@ -1,3 +1,8 @@
+.container {
+  width: 50px;
+  height: 24px;
+}
+
 .layout {
   height: 24px;
   width: 42px;

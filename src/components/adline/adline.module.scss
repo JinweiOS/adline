@@ -1,0 +1,37 @@
+.layout {
+  width: 100%;
+  position: relative;
+
+  &:hover {
+    cursor: text;
+
+    .helperLayout {
+      transform: scale(1);
+      transition: transform 0.2s ease;
+    }
+  }
+
+  .wrapper {
+    outline: none;
+    padding: 0 4px;
+
+    &:hover {
+      border-radius: 8px;
+      background-color: rgb(224,233,255);
+      transition: background-color 0.2s ease;
+    }
+
+    .contentLine {
+      outline: none;
+      height: 26px;
+      line-height: 26px;
+    }
+  }
+}
+
+.helperLayout {
+  position: absolute;
+  top: 0;
+  left: -50px;
+  transform: scale(0);
+}
